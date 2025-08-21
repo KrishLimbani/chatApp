@@ -1,4 +1,4 @@
-import Demo from "./components/demo"
+import Demo from "../components/demo"
 
 
 function App() {
@@ -8,7 +8,8 @@ function App() {
     <>
       <h1 className="text-4xl font-medium text-center text-blue-500">Chat app</h1>
       <Demo/>
-      
+      <p>CHAT APP</p>
+    
     </>
   )
 }
