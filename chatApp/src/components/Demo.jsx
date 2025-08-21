@@ -2,8 +2,8 @@ import React from 'react'
 
 const Demo = () => {
   return (
-    <div>demo</div>
+    <div>Demo</div>
   )
 }
 
-export default Demo;
+export default Demo
