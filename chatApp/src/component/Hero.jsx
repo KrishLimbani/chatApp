@@ -62,10 +62,24 @@ function Hero() {
     }, [charIndex, index, texts]);
 
     return (
-        <div className="h-[90vh] flex bg-black font-mono">
-            <div className="h-full w-[50vw] px-40 relative">
+        <div className="h-[100vh] flex w-full bg-black font-mono">
+            <div className="h-full w-[50vw] px-5 sm:px-30 relative">
+                <motion.div
+                    className=" w-20 bg-white px-2 py-2 rounded-full shadow-lg absolute top-[25%] text-center text-black font-semibold"
+                    animate={{ y: [0, -10, 0] }}
+                    drag
+                    transition={{ repeat: Infinity, duration: 2 }}
+                    dragConstraints={{
+                        top: -10,
+                        bottom: 10,
+                        left: -10,
+                        right: 10,
+                    }}
+                >
+                    Hey👋
+                </motion.div>
                 <motion.h1
-                    className="text-5xl font-bold text-white absolute top-[37%] w-100"
+                    className="text-3xl sm:text-5xl font-bold text-white absolute top-[37%] sm:w-100"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.3 }}
