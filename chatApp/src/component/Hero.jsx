@@ -33,11 +33,11 @@
 
 // export default Hero;
 import { useState, useEffect } from "react";
-import { Globe, MoveRight } from "lucide-react";
+import { Globe, MoveRight, MessagesSquare } from "lucide-react";
 import { motion } from "framer-motion";
 
 function Hero() {
-    const texts = ["Welcome to ChatApp", "Chat. Connect. Collaborate."];
+    const texts = ["Welcome to ChatApp", "Chat. Connect. Collaborate.", "Chat in Real-Time"];
     const [displayText, setDisplayText] = useState("");
     const [index, setIndex] = useState(0);
     const [charIndex, setCharIndex] = useState(0);
@@ -62,7 +62,7 @@ function Hero() {
     }, [charIndex, index, texts]);
 
     return (
-        <div className="h-[100vh] flex w-full bg-black font-mono">
+        <div className="h-[100vh] flex w-full bg-black font-mono"> {/* bg-gradient-to-r from-[#151515] via-[#3B82F6] to-[#FF3F17] animate-gradient */}
             <div className="h-full w-[50vw] px-5 sm:px-30 relative">
                 <motion.div
                     className=" w-20 bg-white px-2 py-2 rounded-full shadow-lg absolute top-[25%] text-center text-black font-semibold"
@@ -72,7 +72,7 @@ function Hero() {
                     dragConstraints={{
                         top: -10,
                         bottom: 10,
-                        left: -10,
+                        left: -20,
                         right: 10,
                     }}
                 >
@@ -105,6 +105,28 @@ function Hero() {
                     </div>
                     <MoveRight color="gray" className="ml-2" />
                 </motion.div>
+            </div>
+            <div className="flex-1 relative flex justify-center items-center mt-10 md:mt-0">
+                {/* Animated 3D illustration */}
+                {/* <motion.img
+                    src='' 
+                    className="w-80 md:w-96 relative z-10"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1, ease: "easeOut" }}
+                /> */}
+
+                {/* Blurred gradient shapes */}
+                <motion.div
+                    className="absolute top-20 right-10 w-72 h-72 bg-purple-500/30 rounded-full blur-3xl"
+                    animate={{ scale: [1, 1.1, 1], opacity: [0.6, 1, 0.6] }}
+                    transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                />
+                <motion.div
+                    className="absolute bottom-30 right-20 w-52 h-52 bg-pink-500/30 rounded-full blur-2xl"
+                    animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.8, 0.5] }}
+                    transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+                />
             </div>
         </div>
     );
