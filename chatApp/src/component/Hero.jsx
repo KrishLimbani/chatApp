@@ -37,7 +37,7 @@ import { Globe, MoveRight, MessagesSquare } from "lucide-react";
 import { motion } from "framer-motion";
 
 function Hero() {
-    const texts = ["Welcome to ChatApp", "Chat. Connect. Collaborate.", "Chat in Real-Time"];
+    const texts = ["Welcome to ChatApp", "Chat. Connect. Collaborate."];
     const [displayText, setDisplayText] = useState("");
     const [index, setIndex] = useState(0);
     const [charIndex, setCharIndex] = useState(0);
